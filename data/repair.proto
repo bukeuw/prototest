@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "history.proto";
+
+message Repair {
+	uint32 id = 1;
+	string cso_number = 2;
+	bool warranty = 3;
+	optional double fee = 4;
+	string submitted_date = 5;
+	uint32 customer_id = 6;
+	string created_at = 7;
+	string updated_at = 8;
+
+	enum RepairType {
+		RETAIL = 0;
+		PROJECT = 1;
+	};
+
+	RepairType type = 9;
+
+	HistoryList histories = 10;
+}
+
+message RepairList {
+	repeated Repair repairs = 1;
+}

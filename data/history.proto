@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message History {
+	uint32 id = 1;
+	string status = 2;
+	string note = 3;
+	bool active = 4;
+	uint32 user_id = 5;
+	uint32 repair_id = 6;
+	string created_at = 7;
+	string updated_at = 8;
+}
+
+message HistoryList {
+	repeated History histories = 1;
+}
